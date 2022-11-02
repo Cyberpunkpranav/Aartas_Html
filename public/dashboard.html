@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Aartas | Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../src/css/dashboard.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
+</head>
+
+<body>
+
+  <button  class="parentclose position-absolute"onclick="closeform()"></button>
+  <!-- Navbar-->
+  <div class="navsection p-2">
+
+    <div class="container-fluid ">
+      <div class="row align-items-center justify-content-evenly">
+
+        <!-- User card-->
+        <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-6">
+          <div class="col-md-12 col-12 user">
+            <p class="m-0 username text-decoration-none text-lg-start text-md-start text-center">UserName here</p>
+            <p class="m-0 userstatus text-decoration-none text-lg-start text-md-start text-center"><small
+                class="text-muted">Designation here</small></p>
+          </div>
+        </div>
+        <!-- User card-->
+
+        <!--menu-->
+        <div class="col-lg-6 col-xl-5 col-sm-auto col-md-auto col-10 p-2 m-0 menu order-1 order-xl-0 order-sm-0 order-md-0 order-sm-0">
+          <div class="row align-items-center justify-content-around">
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                  <img src="../src/images/today.png" class="img-fluid" style="width:1.5rem;"/>   
+                    <p class="col-12 m-0">Today</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                  <img src="../src/images/appointment.png" class="img-fluid" style="width:1.5rem;"/>
+                    <p class="col-12 m-0">Appointments</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                  <img src="../src/images/patient.png" class="img-fluid" style="width:1.5rem;"/>
+                    <p class="col-12 m-0">Patients</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                  <img src="../src/images/doctor.png" class="img-fluid" style="width:1.5rem;"/>
+                    <p class="col-12 m-0">Doctors</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                    <img src="../src/images/dsr.png" class="img-fluid" style="width:1.5rem;"/>
+                    <p class="col-12 m-0">DSR</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                  <img src="../src/images/pharmacy.png" class="img-fluid" style="width:1.5rem;"/>
+                    <p class="col-12 m-0">Pharmacy</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--menu-->
+
+        <!--Add Button catalog-->
+
+        <!--Add Button-->
+        <div class="col-lg-2 col-xl-1 col-md-1 col-6 col-sm-2 text-center position-relative">
+          <button class="btn col-12 addbtn">+Add</button>
+          <!--Add Button-->
+
+          <!--Add Button Options-->
+          <div class=" text-center addoptions position-absolute">
+            <input class="col-12 p-lg-2 border-1 border-bottom text-start patient" type="button"
+              value="Patient">
+            <input class="col-12 p-lg-2 text-start border-1 border-bottom appointment" type="button"
+              value="Appointment">
+            <input class="col-12 p-lg-2 doctorslot shadow-sm text-start" type="button" value="Doctor Slot">
+          </div>
+          <!--Add Button Options-->
+        </div>
+        <!--Add Button catalog-->
+
+        <!--Search-->
+        <div class="col-10 col-lg-2 col-xl-2 col-md-3 col-sm-2 py-3  order-sm-2 order-2 Search position-relative">
+          <article class='Search-box'>
+            <input type="text" class="Search-Text"  placeholder= "search"/>
+            <a class="Search-btn" href="#"><i class="fa fa-search" aria-hidden="true"style="color:#96351E;"></i></a>
+          </article>
+        </div>
+        <!-- <div class="col-10 col-lg-2 col-xl-2 col-md-3 col-sm-2 search">
+          <form class="d-flex position-relative ">
+            <input class="form-control col-auto" type="search" placeholder="Search" aria-label="Search">
+            <button class="searchbtn rounded btn-sm m-0 position-absolute" type="submit"><i class="fa fa-search"
+                aria-hidden="true"></i></button>
+          </form>
+        </div>
+     -->
+        <!--Search-->
+
+      </div>
+    </div>
+  </div>
+  <!-- Navbar-->
+
+  <!--Userin-->
+  <div class="container-fluid doctorcontainer">
+    <section class="doctorsection ">
+      <div class="row shadow-sm">
+        <!-- col-xl-11 col-sm-10 col-lg-11 col-md-11 col-10 -->
+        <div class="d-flex scroll doctortab">
+          <div id="doctortab"></div>
+          <button class="btn bg-transparent border-0 d-inline-flex" id="adddoctorbtn">
+            <i class="fa fa-plus-circle" aria-hidden="true" style="color:#96351E;"></i>
+          </button>
+        </div>
+        <!-- <div class="col-xl-1 col-lg-1 col-md-1 col-2 p-0 m-0 align-items-center">
+          <button class="btn">
+            <i class="fa fa-plus-circle" aria-hidden="true" style="color:#96351E;"></i>
+          </button>
+        </div> -->
+
+        <div class="col-lg-5 col-md-6 col-sm-12 col-12 patientinfosection border-start border-top border-2 position-absolute">
+
+            <h5 class="text-center mt-2 position-relative">Patient Details</h5>
+            <button type="button" class="btn-close closebtn position-absolute" aria-label="Close" onclick="closeform()"></button>
+          <hr>
+          <form class="col-12">
+            <div class="form-group col-10 m-auto py-3">
+              <label for="inputEmail4" class="mb-2">Primary Phone Number</label>
+              <input type="number" max="10" min="10" class="form-control patientnumber m-auto" id="inputEmail4"
+                placeholder="Phone Number" required>
+              <label for="inputEmail4" class="pt-3 mb-2">Enter Name</label>
+              <input type="text" maxlength="50" class="form-control m-auto patientname" placeholder="Enter FirstName and LastName" required>
+            </div>
+            <hr>
+            <div class="col-10  m-auto form-group">
+              <p class="m-0 mb-2">Gender</p>
+              <div class="d-flex">
+                <input class="col-4 text-center genderbtn" type="button" value="Male"></input>
+                <input class="col-4 text-center genderbtn" type="button" value="Female"></input>
+                <input class="col-4 text-center genderbtn" type="button" value="Others"></input>
+              </div>
+            </div>
+            <hr>
+            <div class="col-10 m-auto">
+              <label for="date" class="mb-2">Enter Birth Date</label>
+              <input type="date" id="date" class="form-control" required />
+            </div>
+            <hr>
+            <div class="col-10 pb-2 m-auto">
+              <label for="inputAddress" class="mb-2">Add Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Location" required>
+            </div>
+            <div class="col-10 pb-2 m-auto">
+              <label for="inputAddress" class="mb-2">Add Email</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Email ID" required>
+            </div>
+            <hr>
+
+            <div class="col-6 pb-2 m-auto text-center">
+              <button type="submit" class="btn done px-5">Done</button>
+            </div>
+            <div class="col-6 pb-2 m-auto text-center">
+              <button class="btn btn-light px-5" onclick="reset()">Reset</button>
+            </div>
+
+          </form>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12 col-12 appointmentinfosection border-start border-top border-2 position-absolute">
+          <h5 class="text-center mt-2">New Appointment</h5>
+          <button type="button" class="btn-close closebtn position-absolute" aria-label="Close" onclick="closeform()"></button>
+          <hr>
+          <form class="col-12">
+            <label class="m-0 mb-2">Search Using Phone or Name</label>
+            <input type="text" class="form-control selectpatient col-10">
+            <p class="text-danger btn fs-6 p-0 m-0">Warning</p>
+            <div class="col-12 p-0">
+            <button class="Add User btn btn-sm done" onclick="formshift()">Add User</button>
+            </div>
+
+            <hr>
+            <label>Select Location</label>
+            <div class="col-12 form-control location scroll border-0" style="height:7rem;">
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label>
+              </div>
+
+            <hr>
+              <label>Select Doctor</label>
+              <div class="col-12">
+              <select class="col-10 form-control selectdoctor">
+                <option disabled selected>Select Doctor</option>
+                <option>Doctor 1</option>
+                <option>Doctor 2</option>
+                <option>Doctor 3</option>
+                <option>Doctor 4</option>
+                <option>Doctor 5</option>
+                <option>Doctor 6</option>
+                <option>Doctor 7</option>
+                <option>Doctor 8</option>
+                <option>Doctor 9</option>
+                <option>Doctor 10</option>
+
+              </select>
+            </div>
+            <label class="mt-2">Select Date</label>
+            <div class="col-12">
+              <input type="date"class="form-control selectdate">
+            </div>
+            <hr>
+
+            <p class="m-0 mb-2">Select Time Slot</p>
+            <div class="scroll timetab col-12">
+            </div>
+            <button class="btn btn-sm done mt-3 ms-2"><img src="../src/images/addicon.png" class="mb-1 me-1"style="width:1.2rem"/>Time Slot</button>
+            <hr>
+            <div class="col-10 patientsearch m-auto">
+              <label for="patientsearch">Select Patient</label>
+              <input class="form-control position-relative " type="search" placeholder="Search Patient"
+                aria-label="Search">
+              <button class="btn btn-sm patientsearchbtn rounded m-0 position-absolute" type="submit"><i class="fa fa-search"
+                  aria-hidden="true"></i></button>
+            </div>
+            <hr>
+
+            <div class="col-10 m-auto py-2 text-center">
+              <button type="submit" class="btn done px-5">Done</button>
+            </div>
+            <div class="col-10 py-2 m-auto text-center">
+              <button class="btn btn-light px-5" onclick="reset()">Reset</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12 col-12 doctorinfosection border-start border-top border-2 position-absolute">
+          <h5 class="text-center mt-2">Slot Details</h5>
+          <button type="button" class="btn-close closebtn position-absolute" aria-label="Close" onclick="closeform()"></button>
+          <hr>
+          <label>Doctor</label>
+          <div class="col-12">
+          <select class="col-10 form-control selectdoctor">
+            <option disabled selected>Select Doctor</option>
+            <option>Doctor 1</option>
+            <option>Doctor 2</option>
+            <option>Doctor 3</option>
+            <option>Doctor 4</option>
+            <option>Doctor 5</option>
+            <option>Doctor 6</option>
+            <option>Doctor 7</option>
+            <option>Doctor 8</option>
+            <option>Doctor 9</option>
+            <option>Doctor 10</option>
+          </select>
+        </div>
+        <hr>
+        <label>Clinic</label>
+        <div class="col-12">
+        <select class="col-10 form-control selectdoctor">
+          <option disabled selected>Select Doctor</option>
+          <option>Clinic 1</option>
+          <option>Clinic 2</option>
+          <option>Clinic 3</option>
+          <option>Clinic 4</option>
+          <option>Clinic 5</option>
+          <option>Clinic 6</option>
+          <option>Clinic 7</option>
+          <option>Clinic 8</option>
+          <option>Clinic 9</option>
+          <option>Clinic 10</option>
+        </select>
+      </div>
+      <hr>
+      <label>Date</label>
+      <div class="col-12">
+        <input type="date" class="form-control col-10">
+      </div>
+      <hr>
+      <label>Time From</label>
+      <div class="col-12">
+        <input type="time" class="form-control col-10">
+      </div>
+      <hr>
+      <label>Time To</label>
+      <div class="col-12">
+        <input type="time" class="form-control col-10">
+      </div>
+      <hr>
+      <div class="col-10 m-auto py-2 text-center">
+        <button type="submit" class="btn done px-5">Done</button>
+      </div>
+      <div class="col-10 py-2 m-auto text-center">
+        <button class="btn btn-light px-5" onclick="reset()">Reset</button>
+      </div>
+        </div>
+      </div>
+    </section>
+        <!--Patientsection row end-->
+      </div>
+      <!--Container-fluid end-->
+      <section class="patientsection border-start border-5 border-dark border-opacity-50 position-relative">
+        <div class="container-fluid">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6">
+                <div class=" ps-md-3 pt-4 " id="calender">
+                </div>
+              </div>
+              <div class="col-6 ">
+                <div class="p-1 DraggableDiv" id="livetime">
+                 </div>
+               </div>
+            </div>
+          </div>
+          <section id="doctorscheduledata">
+            <div class="container-fluid scroll d-flex">
+              <div class="cardslot d-inline-flex">
+            <div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:20rem;"><div class="card-body p-2"><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time class="form-control starttime bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button disabled class="btn btn-success col-5 startbtn">Start Time</button><button class="btn btn-danger col-5" id="endbtn">End Time</button></div></div></div></div>
+            <div id="cardslot"class=" d-inline-flex"></div>  
+            </div>
+              <button class="btn " id="addslotbutton"><img src="../src/images/addicon.png" style="width:3rem;"/></button>
+            </div>
+
+
+        <hr>
+     
+        <section class="timeslotsection">
+          <div class="container-fluid ">
+            <div class="row ps-md-3 align-items-center ">
+              <div class=" col-12 p-0 m-0 align-items-center">
+                <div class="d-flex">
+                  <div class="col-auto">
+                    <h4 class="p-0 m-0">Time slot avaliable</h4>
+                  </div>
+                  <div class="col-2 ms-2">
+                    <button class="btn m-0 p-0">
+                      <i class="fa fa-plus-circle mt-1" aria-hidden="true" style="color:#222023b4;"></i></button>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+            <div class="scroll timeslots col-12">
+            </div>
+
+          <hr>
+        </div>
+        </section>
+
+        <section class="allappointmentsection">
+          <div class="container-fluid">
+          <div class="scroll">
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Status</th>
+                  <th>Patient Name</th>
+                  <th>Phone Number</th>
+                  <th>Time</th>
+                  <th>Total Amount</th>
+                  <th>Amount Status</th>
+                  <th>Vitals</th>
+                  <th>Actions</th>
+                  <th>More</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                  <img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_confirmed">Confirmed</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910000</td>
+                  <td>10:00 AM</td>
+                  <td>1500</td>
+                  <td><button class="ms-1 btn btn-sm status_completed">Done</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                  <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+                <tr>
+                  <th scope="row"><img src="../src/images/Vitalsdone.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_vitalsdone">Vital Done</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910001</td>
+                  <td>10:00 AM</td>
+                  <td>1500</td>
+                  <td><button class="ms-1 btn btn-sm status_pending">Pending</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                  <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+                <tr>
+                  <th scope="row"><img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_pending">Cancelled</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910000</td>
+                  <td>10:00 AM</td>
+                  <td>1500</td>
+                  <td><button class="ms-1 btn btn-sm status_completed">Done</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                  <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+                <tr>
+                  <th scope="row"><img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_completed">Completed</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910000</td>
+                  <td>10:00 AM</td>
+                  <td>1500</td>
+                  <td><button class="ms-1 btn btn-sm status_completed">Done</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                  <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+                <tr>
+                  <th scope="row"><img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_confirmed">Confirmed</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910000</td>
+                  <td>10:00 AM</td>
+                  <td>1500</td>
+                  <td><button class="ms-1 btn btn-sm status_completed">Done</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                    <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </section>
+      </section>
+      </section>
+
+  <script src="https://kit.fontawesome.com/083c547933.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../src/js/dashboard.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="../src/js/feature.js"></script>
+  <script src="../src/js/timecard.js"></script>
+</body>
+
+</html>
